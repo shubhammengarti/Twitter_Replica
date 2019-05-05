@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <title>User login/logout</title>
+
+    </head>
+    <style>
+    .p1{
+      color: blue;
+      background-color: lightblue;
+    }
+    .p2{
+      color: blue;
+      font-size:30;
+      text-align: center;
+    }
+    .p3{
+      color: blue;
+    }
+    .boxed {
+     border: 1px solid lightblue ;
+     border-radius: 30;
+     border-width: medium;
+   }
+   .p8{
+     text-align: left;
+   }
+    </style>
+    <body>
+      <a href="/" class="p8">Goback</a></br>
+      </br>
+      <p class=p2>{{s}}
+      </p>
+      {% for i in lists1 %}
+      <div class="boxed">
+      <p>@{{i}}</p>
+      <img src="/view?id={{dict3[i]}}" width="100" height="100" align="left">
+      <p class="p3">{{dict1[i]}}</p>
+      <textarea cols="60" rows="6" maxlength="280" placeholder="{{dict[i]}}" name="tweet" readonly></textarea></br>
+      </div>
+      {% endfor %}
+     </br>
+     </br></br></br></br></br>
+
+    </body>
+</html>

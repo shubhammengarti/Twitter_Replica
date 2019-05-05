@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <title>User login/logout</title>
+
+    </head>
+    <style>
+       .p1{
+         text-align: right;
+         background-color: lightblue;
+       }
+       .p2{
+         text-align: center;
+       }
+       .p3{
+         text-align: center;
+         background-color: lightblue;
+       }
+       .boxed {
+        border: 1px solid lightblue ;
+        border-radius: 30;
+        border-width: medium;
+      }
+      .p5{
+        text-align: right;
+        background-color: lightblue;
+      }
+      .p6{
+        color: blue;
+      }
+    </style>
+    <body><a href="/">Goback</a>
+      {{a}}
+            {% if Bool %}
+            <form method="post" action="/edittweet?t={{tweet}}">
+            <p><textarea cols="60" rows="6" maxlength="280" placeholder="{{tweet}}" name="tweet1" required></textarea></br></p></br>
+            <input type="submit" value="Update" name="button"/>
+            </form>
+            {% else %}
+            {% for i in lists1 %}
+            <div class="boxed">
+            <p>@{{dict2[i]}}</p>
+            <p class="p6">{{dict1[i]}}</p>
+             <form method="get|post" action="/edittweet?button=edit&tweets={{dict[i]}}">
+              <p><textarea cols="60" rows="6" maxlength="280" placeholder="{{dict[i]}}" name="tweet" readonly></textarea>
+              <img src="/view?id={{dict3[i]}}" width="100" height="100" align="left">
+              </br></p></br>
+              </div>
+            <input type="text" name="twe" value="{{dict[i]}}" hidden>
+             <input type="submit" value="edit" name="button"/>
+             </form>
+             <form method="post" action="/edittweet">
+               <input type="text" name="twe" value="{{dict[i]}}" hidden>
+              <input type="submit" value="Delete" name="button"/></form>
+             {% endfor %}
+            {% endif %}
+
+    </body>
+</html>

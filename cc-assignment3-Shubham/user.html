@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <title>User login/logout</title>
+        <style>
+          </style>
+    </head>
+    <style>
+    .p1{
+      text-align: right;
+      color:blue;
+    }
+    .p2{
+      margin: 30px;
+      padding: 30px;
+      background-color: lightblue;
+      border-radius: 10;
+      border-color: black;
+    }
+    .p3{
+      text-align: center;
+      background-color: lightblue;
+      font-size: 22;
+      color:blue;
+    }
+    .p4{
+      text-align: right;
+    }
+    .p5{
+      text-align: center;
+      text-shadow: 1px;
+      color: #DC6E07;
+      font-size: 20;
+    }
+    .p6{
+      text-align:right;
+    }
+    </style>
+    <body>
+
+      {% if Bool %}
+      {{a}}
+      {% else %}<div class="p3">
+          Name :{{name}}
+          <br/>
+          Description : {{description}}</div>
+        <p class="p6"> <a href="/">GoBack</a></p>
+          <p class="p4">
+          <form action="/?name={{name}}" method="post">
+            {% if Bool1 %}
+          <input type="submit" style="background-color:lightblue;color:blue" value="Follow" name="button"/>
+          {% else %}
+          <input type="submit" style="background-color:lightblue;color:blue" value="UnFollow" name="button"/>
+          {% endif %}
+        </form></p>
+      {% endif %}</br>
+      <p class="p5">{{st}}</p>
+      {% for i in l2 %}
+      <p class="p1">{{dict1[i]}}</p>
+      <p class="p2">{{dict[i]}}</p></br>
+      {% endfor %}
+    </br>
+  </br>
+   <a href="/">GoBack</a></p>
+    </body>
+</html>

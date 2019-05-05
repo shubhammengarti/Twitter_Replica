@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <title>User login/logout</title>
+
+    </head>
+    <style>
+    .p1{
+      color: blue;
+      background-color: lightblue;
+    }
+    </style>
+    <body>
+           <p class="p1">Please Enter your Tweet here<p>
+            <form method="post" action="/tweet">
+            <textarea cols="70" rows="10" maxlength="280" placeholder="Please enter your tweet here" name="tweet" required></textarea></br>
+           <input type="submit" value="submit" style="background-color:#28A1E7 ;" name="button"/>
+         </form>
+         <form method="post" action="/tweet">
+           <input type="submit" value="cancel" style="background-color:#D3201A" name="button"/>
+        </form>
+        <form action="{{ upload_url }}" method="post" enctype="multipart/form-data" >
+         Upload image: <input type="file" name="file" required /><br/>
+         <input type="submit" />
+        {{a}}
+      </br></br></br></br>
+      <a href="/">Go Back</a>
+    </body>
+</html>

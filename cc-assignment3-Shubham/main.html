@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <title>User login/logout</title>
+
+    </head>
+    <style>
+       .p1{
+         text-align: right;
+         background-color: lightblue;
+       }
+       .p2{
+         text-align: center;
+       }
+       .p3{
+         text-align: center;
+         background-color: lightblue;
+       }
+       .boxed {
+        border: 1px solid lightblue ;
+        border-radius: 30;
+        border-width: medium;
+      }
+      .p5{
+        text-align: right;
+        background-color: lightblue;
+      }
+      .p6{
+        color: blue;
+      }
+    </style>
+    <body>
+            {% if user %}
+            {% if welcome=="welcome" %}
+            {{welcome}} &nbsp &nbsp {{ user.email() }} &nbsp  &nbsp<br/><br/></br></br></p>
+            <form method="post" action="/">
+            Choose Name:<input type="text" name="username" pattern="[A-Za-z]*" required></br></br>
+            <textarea cols="70" rows="10" maxlength="280" placeholder="Please enter your description here" name="description" required></textarea> <p>
+              <form action="/">
+           <input type="submit" value="submit" name="button"/>
+         </form></form>
+          {{a}}
+
+            {% else %}
+            <p class="p3">
+            {{welcome}} &nbsp &nbsp {{ user.email() }} &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp <a href='{{ url }}'>Logout</a> </br><br/><br/></p>
+            <div class="p1">
+            <form method="post" action="/">
+            Search User:<input type="text" name="User" required>
+            <input type="submit" value="search" name="button"/></form>
+          </br></br>
+            <form method="post" action="/">
+            Search Tweet:<input type="text" name="tweet1" required>
+            <input type="submit" value="enter" name="button"/>
+          </form></div>
+          <div class="p2">
+            <a href="/tweet">Tweet</a>({{count}}) &nbsp  &nbsp
+          <a href="/follower">Follower</a>({{count1}})&nbsp  &nbsp
+          <a href="/followed">FollowedBy</a>({{count2}})&nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp
+         <a href="/edit">Edit Profile</a>&nbsp  &nbsp &nbsp
+         <a href="/edittweet">Edit Tweet</a></br></div>
+          </form>
+            {% if bool %}
+            {% for i in list1 %}
+            <div class="boxed">
+            <p>@{{i}}</p>
+            <p class="p6">{{dict[i]}}</p>
+            <p><textarea cols="60" rows="6" maxlength="280" placeholder="{{dict1[i]}}" name="tweet" readonly></textarea>
+            <img src="/view?id={{dict2[i]}}" width="100" height="100" align="left">
+            </br></p></br>
+             </div>
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% else %}
+            <form>
+            <p class="d">Hello Guest welcome to the app</p>
+            <p class="div1"> <a href='{{ url }}'>Login</a></p>
+            {% endif %}
+    </body>
+</html>

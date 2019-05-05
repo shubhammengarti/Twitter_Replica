@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <title>User login/logout</title>
+
+    </head>
+    <style>
+      .d1{
+        background-color:lightblue;
+        color:blue;
+      }
+      .p1{
+        text-align:center;
+        color: white;
+        font: 1.5em Georgia, serif;
+        font-size:20;
+        text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+      }
+      div.p2{
+        text-align:center;
+        border: 30px solid lightblue ;
+        border-radius: 40;
+        border-width:medium;
+        font-family: "Playfair Display";
+}
+      }
+    .p3{
+        color:Red;
+        background-color:pink;
+      }
+      </style>
+    <body>
+      {% if Bool %}
+      <p class="d1">
+      {{a}}</br><a href="/">Back</a>
+      </p>
+      {% else %}
+      <p class="p1">People who are followed</br></p>
+      {% for i in list %}
+      <div class="p2">
+      {{i}}
+      {% endfor %}
+      </div>
+      {% endif %}
+      </br></br></br></br></br></br>
+      <p class="p3"><a href="/">Exit</a></p>
+
+    </body>
+</html>
